@@ -1,0 +1,27 @@
+vint@ha /mnt/repo/Developer/Edu/Otus/OS/Linux/DZ/1/5 $ sudo ./script.sh
+This ip 77.82.217.123 from banned
+Enter to another ip
+This ip 91.77.155.80 from banned
+Enter to another ip
+удалён '/var/run/ip_access_ban'
+vint@ha /mnt/repo/Developer/Edu/Otus/OS/Linux/DZ/1/5 $ sudo iptables -F
+vint@ha /mnt/repo/Developer/Edu/Otus/OS/Linux/DZ/1/5 $ sudo ./script.sh
+
+This not my ip address
+    0     0 DROP       all  --  *      *       77.82.217.123        0.0.0.0/0
+
+This not my ip address
+    0     0 DROP       all  --  *      *       91.77.155.80         0.0.0.0/0
+удалён '/var/run/ip_access_ban'
+vint@ha /mnt/repo/Developer/Edu/Otus/OS/Linux/DZ/1/5 $ sudo ./script.sh
+This ip 77.82.217.123 from banned
+Enter to another ip
+This ip 91.77.155.80 from banned
+Enter to another ip
+удалён '/var/run/ip_access_ban'
+vint@ha /mnt/repo/Developer/Edu/Otus/OS/Linux/DZ/1/5 $ sudo touch /var/run/ip_access_ban
+vint@ha /mnt/repo/Developer/Edu/Otus/OS/Linux/DZ/1/5 $ sudo ./script.sh
+
+Script is running!
+Or if not process please delete /var/run/ip_access_ban file
+

@@ -1,0 +1,59 @@
+
+
+[root@localhost vint]# systemctl start diag.service
+[root@localhost vint]# systemctl status diag.service
+● diag.service - Diag service
+   Loaded: loaded (/etc/systemd/system/diag.service; static; vendor preset: disabled)
+   Active: active (running) since Пт 2018-05-25 22:59:20 +07; 1s ago
+ Main PID: 1593 (diag.sh)
+   CGroup: /system.slice/diag.service
+           ├─1593 /bin/bash /root/script/diag.sh Fatal /var/log/messages /var/log/diag.log
+           └─1596 sleep 30
+
+
+[root@localhost vint]# echo "Fatal" >> /var/log/messages
+[root@localhost vint]# htop
+[root@localhost vint]# echo "Fatal" >> /var/log/messages
+[root@localhost vint]# tail -f /var/log/diag.log
+Fatal
+Fatal
+Fatal
+^C
+[root@localhost vint]# echo "Fatal Error from this Service" >> /var/log/messages
+[root@localhost vint]# tail -f /var/log/diag.log
+Fatal
+Fatal
+Fatal
+Fatal
+Fatal
+Fatal Error from this Service
+^C
+[root@localhost vint]# echo `date` " Fatal Error from this Service" >> /var/log/messages
+[root@localhost vint]# tail -f /var/log/diag.log
+Fatal
+Fatal
+Fatal
+Fatal
+Fatal
+Fatal Error from this Service
+Fatal
+Fatal
+Fatal Error from this Service
+Пт май 25 23:00:45 +07 2018  Fatal Error from this Service
+Fatal
+Fatal
+Fatal Error from this Service
+Пт май 25 23:00:45 +07 2018  Fatal Error from this Service
+Fatal
+Fatal
+Fatal Error from this Service
+Пт май 25 23:00:45 +07 2018  Fatal Error from this Service
+Fatal
+Fatal
+Fatal Error from this Service
+Пт май 25 23:00:45 +07 2018  Fatal Error from this Service
+Fatal
+Fatal
+Fatal Error from this Service
+Пт май 25 23:00:45 +07 2018  Fatal Error from this Service
+

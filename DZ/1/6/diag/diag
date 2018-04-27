@@ -1,0 +1,10 @@
+#
+#Configuration file diag service
+#
+#
+
+f_word="Fatal"
+
+f_log="/var/log/messages"
+
+diag_log="/var/log/diag.log"

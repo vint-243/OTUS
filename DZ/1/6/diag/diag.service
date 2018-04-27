@@ -1,0 +1,13 @@
+
+[Unit]
+Description=Diag service 
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/sysconfig/diag 
+Restart=always
+
+ExecStart=/root/script/diag.sh $f_word $f_log $diag_log
+
+
+                                               

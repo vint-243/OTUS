@@ -1,0 +1,292 @@
+vint@ha /install/VBOX/work/centos $ pwd
+/install/VBOX/work/centos
+vint@ha /install/VBOX/work/centos $ vagrant up
+Bringing machine 'centos7' up with 'virtualbox' provider...
+==> centos7: Clearing any previously set forwarded ports...
+==> centos7: Clearing any previously set network interfaces...
+==> centos7: Preparing network interfaces based on configuration...
+    centos7: Adapter 1: nat
+    centos7: Adapter 2: bridged
+==> centos7: Forwarding ports...
+    centos7: 22 (guest) => 2222 (host) (adapter 1)
+==> centos7: Running 'pre-boot' VM customizations...
+==> centos7: Booting VM...
+==> centos7: Waiting for machine to boot. This may take a few minutes...
+    centos7: SSH address: 127.0.0.1:2222
+    centos7: SSH username: vagrant
+    centos7: SSH auth method: private key
+:paranoid is deprecated, please use :verify_host_key. Supported values are exactly the same, only the name of the option has changed.
+:paranoid is deprecated, please use :verify_host_key. Supported values are exactly the same, only the name of the option has changed.
+    centos7: Warning: Connection reset. Retrying...
+:paranoid is deprecated, please use :verify_host_key. Supported values are exactly the same, only the name of the option has changed.
+    centos7: Warning: Remote connection disconnect. Retrying...
+:paranoid is deprecated, please use :verify_host_key. Supported values are exactly the same, only the name of the option has changed.
+    centos7: Warning: Connection reset. Retrying...
+:paranoid is deprecated, please use :verify_host_key. Supported values are exactly the same, only the name of the option has changed.
+:paranoid is deprecated, please use :verify_host_key. Supported values are exactly the same, only the name of the option has changed.
+:paranoid is deprecated, please use :verify_host_key. Supported values are exactly the same, only the name of the option has changed.
+:paranoid is deprecated, please use :verify_host_key. Supported values are exactly the same, only the name of the option has changed.
+:paranoid is deprecated, please use :verify_host_key. Supported values are exactly the same, only the name of the option has changed.
+:paranoid is deprecated, please use :verify_host_key. Supported values are exactly the same, only the name of the option has changed.
+:paranoid is deprecated, please use :verify_host_key. Supported values are exactly the same, only the name of the option has changed.
+==> centos7: Machine booted and ready!
+==> centos7: Checking for guest additions in VM...
+    centos7: The guest additions on this VM do not match the installed version of
+    centos7: VirtualBox! In most cases this is fine, but in rare cases it can
+    centos7: prevent things such as shared folders from working properly. If you see
+    centos7: shared folder errors, please make sure the guest additions within the
+    centos7: virtual machine match the version of VirtualBox you have installed on
+    centos7: your host and reload your VM.
+    centos7: 
+    centos7: Guest Additions Version: 4.3.28
+    centos7: VirtualBox Version: 5.1
+==> centos7: Setting hostname...
+==> centos7: Configuring and enabling network interfaces...
+==> centos7: Mounting shared folders...
+    centos7: /vagrant => /install/VBOX/work/centos
+==> centos7: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> centos7: flag to force provisioning. Provisioners marked to run always will still run.
+vint@ha /install/VBOX/work/centos $ vagrant provision
+==> centos7: Running provisioner: shell...
+:paranoid is deprecated, please use :verify_host_key. Supported values are exactly the same, only the name of the option has changed.
+    centos7: Running: inline script
+==> centos7: 
+==> centos7: Install mdadm
+==> centos7: Geladene Plugins: fastestmirror
+==> centos7: Loading mirror speeds from cached hostfile
+==> centos7:  * base: mirror.reconn.ru
+==> centos7:  * extras: mirror.reconn.ru
+==> centos7:  * updates: mirror.reconn.ru
+==> centos7: Paket mdadm-4.0-5.el7.x86_64 ist bereits in der neuesten Version installiert.
+==> centos7: Nichts zu tun
+==> centos7: 
+==> centos7: Add parted
+==> centos7: 
+==> centos7: Create RAID
+==> centos7: mdadm: Defaulting to version 1.2 metadata
+==> centos7: mdadm: array /dev/md0 started.
+==> centos7: /dev/md0:
+==> centos7:            Version : 1.2
+==> centos7:      Creation Time : Mon May  7 14:25:26 2018
+==> centos7:         Raid Level : raid0
+==> centos7:         Array Size : 104787968 (99.93 GiB 107.30 GB)
+==> centos7:       Raid Devices : 2
+==> centos7:      Total Devices : 2
+==> centos7:        Persistence : Superblock is persistent
+==> centos7: 
+==> centos7:        Update Time : Mon May  7 14:25:26 2018
+==> centos7:              State : clean 
+==> centos7:     Active Devices : 2
+==> centos7:    Working Devices : 2
+==> centos7:     Failed Devices : 0
+==> centos7:      Spare Devices : 0
+==> centos7: 
+==> centos7:         Chunk Size : 512K
+==> centos7: 
+==> centos7: Consistency Policy : unknown
+==> centos7: 
+==> centos7:               Name : centos7:0  (local to host centos7)
+==> centos7:               UUID : f741aa62:6235610d:4f74bc39:78708e60
+==> centos7:             Events : 0
+==> centos7: 
+==> centos7:     Number   Major   Minor   RaidDevice State
+==> centos7:        0       8       17        0      active sync   /dev/sdb1
+==> centos7:        1       8       33        1      active sync   /dev/sdc1
+==> centos7: 
+==> centos7: Create parted
+==> centos7: mke2fs 1.42.9 (28-Dec-2013)
+==> centos7: Dateisystem-Label=
+==> centos7: OS-Typ: Linux
+==> centos7: Blockgröße=4096 (log=2)
+==> centos7: Fragmentgröße=4096 (log=2)
+==> centos7: Stride=128 Blöcke, Stripebreite=256 Blöcke
+==> centos7: 655360 Inodes, 2619392 Blöcke
+==> centos7: 130969 Blöcke (5.00%) reserviert für den Superuser
+==> centos7: Erster Datenblock=0
+==> centos7: Maximale Dateisystem-Blöcke=2151677952
+==> centos7: 80 Blockgruppen
+==> centos7: 32768 Blöcke pro Gruppe, 32768 Fragmente pro Gruppe
+==> centos7: 8192 Inodes pro Gruppe
+==> centos7: Superblock-Sicherungskopien gespeichert in den Blöcken: 
+==> centos7: 	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632
+==> centos7: 
+==> centos7: Platz für Gruppentabellen wird angefordert:  0/80
+==> centos7: erledigt                        
+==> centos7: Inode-Tabellen werden geschrieben: erledigt                        
+==> centos7: Erstelle Journal (32768 Blöcke): 
+==> centos7: erledigt
+==> centos7: Schreibe Superblöcke und Dateisystem-Accountinginformationen:  0/80
+==> centos7:      
+==> centos7: erledigt
+==> centos7: mke2fs 1.42.9 (28-Dec-2013)
+==> centos7: Dateisystem-Label=
+==> centos7: OS-Typ: Linux
+==> centos7: Blockgröße=4096 (log=2)
+==> centos7: Fragmentgröße=4096 (log=2)
+==> centos7: Stride=128 Blöcke, Stripebreite=256 Blöcke
+==> centos7: 655360 Inodes, 2619648 Blöcke
+==> centos7: 130982 Blöcke (5.00%) reserviert für den Superuser
+==> centos7: Erster Datenblock=0
+==> centos7: Maximale Dateisystem-Blöcke=2151677952
+==> centos7: 80 Blockgruppen
+==> centos7: 32768 Blöcke pro Gruppe, 32768 Fragmente pro Gruppe
+==> centos7: 8192 Inodes pro Gruppe
+==> centos7: Superblock-Sicherungskopien gespeichert in den Blöcken: 
+==> centos7: 	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632
+==> centos7: 
+==> centos7: Platz für Gruppentabellen wird angefordert: erledigt                        
+==> centos7: Inode-Tabellen werden geschrieben: erledigt                        
+==> centos7: Erstelle Journal (32768 Blöcke): 
+==> centos7: erledigt
+==> centos7: Schreibe Superblöcke und Dateisystem-Accountinginformationen:  0/80
+==> centos7:      
+==> centos7: erledigt
+==> centos7: mke2fs 1.42.9 (28-Dec-2013)
+==> centos7: Dateisystem-Label=
+==> centos7: OS-Typ: Linux
+==> centos7: Blockgröße=4096 (log=2)
+==> centos7: Fragmentgröße=4096 (log=2)
+==> centos7: Stride=128 Blöcke, Stripebreite=256 Blöcke
+==> centos7: 1310720 Inodes, 5239552 Blöcke
+==> centos7: 261977 Blöcke (5.00%) reserviert für den Superuser
+==> centos7: Erster Datenblock=0
+==> centos7: Maximale Dateisystem-Blöcke=2153775104
+==> centos7: 160 Blockgruppen
+==> centos7: 32768 Blöcke pro Gruppe, 32768 Fragmente pro Gruppe
+==> centos7: 8192 Inodes pro Gruppe
+==> centos7: Superblock-Sicherungskopien gespeichert in den Blöcken: 
+==> centos7: 	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
+==> centos7: 	4096000
+==> centos7: 
+==> centos7: Platz für Gruppentabellen wird angefordert:   0/160
+==> centos7: erledigt                        
+==> centos7: Inode-Tabellen werden geschrieben: erledigt                        
+==> centos7: Erstelle Journal (32768 Blöcke): 
+==> centos7: erledigt
+==> centos7: Schreibe Superblöcke und Dateisystem-Accountinginformationen:   0/160
+==> centos7:        
+==> centos7: erledigt
+==> centos7: mke2fs 1.42.9 (28-Dec-2013)
+==> centos7: Dateisystem-Label=
+==> centos7: OS-Typ: Linux
+==> centos7: Blockgröße=4096 (log=2)
+==> centos7: Fragmentgröße=4096 (log=2)
+==> centos7: Stride=128 Blöcke, Stripebreite=256 Blöcke
+==> centos7: 1310720 Inodes, 5239296 Blöcke
+==> centos7: 261964 Blöcke (5.00%) reserviert für den Superuser
+==> centos7: Erster Datenblock=0
+==> centos7: Maximale Dateisystem-Blöcke=2153775104
+==> centos7: 160 Blockgruppen
+==> centos7: 32768 Blöcke pro Gruppe, 32768 Fragmente pro Gruppe
+==> centos7: 8192 Inodes pro Gruppe
+==> centos7: Superblock-Sicherungskopien gespeichert in den Blöcken: 
+==> centos7: 	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
+==> centos7: 	4096000
+==> centos7: 
+==> centos7: Platz für Gruppentabellen wird angefordert:   0/160
+==> centos7: erledigt                        
+==> centos7: Inode-Tabellen werden geschrieben: erledigt                        
+==> centos7: Erstelle Journal (32768 Blöcke): 
+==> centos7: erledigt
+==> centos7: Schreibe Superblöcke und Dateisystem-Accountinginformationen:   0/160
+==> centos7:   2/160
+==> centos7:        
+==> centos7: erledigt
+==> centos7: mke2fs 1.42.9 (28-Dec-2013)
+==> centos7: Dateisystem-Label=
+==> centos7: OS-Typ: Linux
+==> centos7: Blockgröße=4096 (log=2)
+==> centos7: Fragmentgröße=4096 (log=2)
+==> centos7: Stride=128 Blöcke, Stripebreite=256 Blöcke
+==> centos7: 2621440 Inodes, 10478592 Blöcke
+==> centos7: 523929 Blöcke (5.00%) reserviert für den Superuser
+==> centos7: Erster Datenblock=0
+==> centos7: Maximale Dateisystem-Blöcke=2157969408
+==> centos7: 320 Blockgruppen
+==> centos7: 32768 Blöcke pro Gruppe, 32768 Fragmente pro Gruppe
+==> centos7: 8192 Inodes pro Gruppe
+==> centos7: Superblock-Sicherungskopien gespeichert in den Blöcken: 
+==> centos7: 	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
+==> centos7: 	4096000, 7962624
+==> centos7: 
+==> centos7: Platz für Gruppentabellen wird angefordert:   0/320
+==> centos7: erledigt                        
+==> centos7: Inode-Tabellen werden geschrieben: erledigt                        
+==> centos7: Erstelle Journal (32768 Blöcke): 
+==> centos7: erledigt
+==> centos7: Schreibe Superblöcke und Dateisystem-Accountinginformationen:   0/320
+==> centos7:        
+==> centos7: erledigt
+==> centos7: 
+==> centos7: SHow parted from RAID
+==> centos7: Modell: ATA VBOX HARDDISK (scsi)
+==> centos7: Festplatte  /dev/sda:  10,6GB
+==> centos7: Sektorgröße (logisch/physisch): 512B/512B
+==> centos7: Partitionstabelle: msdos
+==> centos7: Disk Flags: 
+==> centos7: 
+==> centos7: Nummer  Anfang  Ende    Größe   Typ      Dateisystem  Flags
+==> centos7:  1      1049kB  525MB   524MB   primary  xfs          boot
+==> centos7:  2      525MB   10,6GB  10,1GB  primary               lvm
+==> centos7: 
+==> centos7: 
+==> centos7: Modell: ATA VBOX HARDDISK (scsi)
+==> centos7: Festplatte  /dev/sdb:  53,7GB
+==> centos7: Sektorgröße (logisch/physisch): 512B/512B
+==> centos7: Partitionstabelle: gpt
+==> centos7: Disk Flags: 
+==> centos7: 
+==> centos7: Nummer  Anfang  Ende    Größe   Dateisystem  Name  Flags
+==> centos7:  1      1049kB  53,7GB  53,7GB               1
+==> centos7: 
+==> centos7: 
+==> centos7: Modell: ATA VBOX HARDDISK (scsi)
+==> centos7: Festplatte  /dev/sdc:  53,7GB
+==> centos7: Sektorgröße (logisch/physisch): 512B/512B
+==> centos7: Partitionstabelle: gpt
+==> centos7: Disk Flags: 
+==> centos7: 
+==> centos7: Nummer  Anfang  Ende    Größe   Dateisystem  Name  Flags
+==> centos7:  1      1049kB  53,7GB  53,7GB               1
+==> centos7: 
+==> centos7: 
+==> centos7: Modell: Linux device-mapper (linear) (dm)
+==> centos7: Festplatte  /dev/mapper/centos-swap:  1065MB
+==> centos7: Sektorgröße (logisch/physisch): 512B/512B
+==> centos7: Partitionstabelle: loop
+==> centos7: Disk Flags: 
+==> centos7: 
+==> centos7: Nummer  Anfang  Ende    Größe   Dateisystem     Flags
+==> centos7:  1      0,00B   1065MB  1065MB  linux-swap(v1)
+==> centos7: 
+==> centos7: 
+==> centos7: Modell: Linux device-mapper (linear) (dm)
+==> centos7: Festplatte  /dev/mapper/centos-root:  8997MB
+==> centos7: Sektorgröße (logisch/physisch): 512B/512B
+==> centos7: Partitionstabelle: loop
+==> centos7: Disk Flags: 
+==> centos7: 
+==> centos7: Nummer  Anfang  Ende    Größe   Dateisystem  Flags
+==> centos7:  1      0,00B   8997MB  8997MB  xfs
+==> centos7: 
+==> centos7: 
+==> centos7: Modell: Linux Software RAID Array (md)
+==> centos7: Festplatte  /dev/md0:  107GB
+==> centos7: Sektorgröße (logisch/physisch): 512B/512B
+==> centos7: Partitionstabelle: gpt
+==> centos7: Disk Flags: 
+==> centos7: 
+==> centos7: Nummer  Anfang  Ende    Größe   Dateisystem  Name  Flags
+==> centos7:  1      1049kB  10,7GB  10,7GB  ext4         1
+==> centos7:  2      10,7GB  21,5GB  10,7GB  ext4         2
+==> centos7:  3      21,5GB  42,9GB  21,5GB  ext4         3
+==> centos7:  4      42,9GB  64,4GB  21,5GB  ext4         4
+==> centos7:  5      64,4GB  107GB   42,9GB  ext4         5
+==> centos7: Creation Time =      Creation Time : Mon May  7 14:25:26 2018
+==> centos7: RAID Size =         Array Size : 104787968 (99.93 GiB 107.30 GB)
+==> centos7: Chunk Size =         Chunk Size : 512K
+==> centos7: Device from RAID 
+==> centos7:        0       8       17        0      active sync   /dev/sdb1
+==> centos7:        1       8       33        1      active sync   /dev/sdc1
+vint@ha /install/VBOX/work/centos $ 
+

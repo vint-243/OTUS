@@ -1,0 +1,39 @@
+[root@localhost vint]# cp /usr/lib/systemd/system/httpd.service /etc/systemd/system/httpd@.service
+[root@localhost vint]# vim /etc/systemd/system/httpd\@.service 
+[root@localhost vint]# cp -vR /etc/httpd/conf/httpd.conf /etc/httpd/conf/httpd-1.conf
+[root@localhost vint]# vim /etc/httpd/conf/httpd-1.conf 
+[root@localhost vint]# cp -v /etc/sysconfig/httpd /etc/sysconfig/httpd-1
+«/etc/sysconfig/httpd» -> «/etc/sysconfig/httpd-1»
+[root@localhost vint]# vim /etc/sysconfig/httpd-1 
+[root@localhost vint]# systemctl start httpd@1.service
+[root@localhost vint]# systemctl status httpd@1.service
+● httpd@1.service - The Apache HTTP Server
+   Loaded: loaded (/etc/systemd/system/httpd@.service; disabled; vendor preset: disabled)
+   Active: active (running) since Вс 2018-05-27 17:54:20 +07; 5s ago
+     Docs: man:httpd(8)
+           man:apachectl(8)
+ Main PID: 31457 (httpd)
+   Status: "Processing requests..."
+   CGroup: /system.slice/system-httpd.slice/httpd@1.service
+           ├─31457 /usr/sbin/httpd -f /etc/httpd/conf/httpd-1.conf -DFOREGROUND
+           ├─31458 /usr/sbin/httpd -f /etc/httpd/conf/httpd-1.conf -DFOREGROUND
+           ├─31459 /usr/sbin/httpd -f /etc/httpd/conf/httpd-1.conf -DFOREGROUND
+           ├─31460 /usr/sbin/httpd -f /etc/httpd/conf/httpd-1.conf -DFOREGROUND
+           ├─31461 /usr/sbin/httpd -f /etc/httpd/conf/httpd-1.conf -DFOREGROUND
+           └─31462 /usr/sbin/httpd -f /etc/httpd/conf/httpd-1.conf -DFOREGROUND
+
+май 27 17:54:20 localhost.localdomain systemd[1]: Starting The Apache HTTP Server...
+май 27 17:54:20 localhost.localdomain httpd[31457]: AH00558: httpd: Could not reliably determine the server's fully qualified doma...essage
+май 27 17:54:20 localhost.localdomain systemd[1]: Started The Apache HTTP Server.
+Hint: Some lines were ellipsized, use -l to show in full.
+[root@localhost vint]# netstat -ntlup
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      964/sshd            
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      1185/master         
+tcp6       0      0 :::80                   :::*                    LISTEN      31457/httpd         
+tcp6       0      0 :::22                   :::*                    LISTEN      964/sshd            
+tcp6       0      0 ::1:25                  :::*                    LISTEN      1185/master         
+udp        0      0 127.0.0.1:323           0.0.0.0:*                           601/chronyd         
+udp6       0      0 ::1:323                 :::*                                601/chronyd         
+

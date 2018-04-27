@@ -1,0 +1,8 @@
+
+
+May 25 23:44:32 localhost spawn-fcgi: spawn-fcgi: can't find user name apache
+May 25 23:44:32 localhost systemd: spawn-fcgi.service: control process exited, code=exited status=255
+May 25 23:44:32 localhost systemd: Failed to start Spawn-fsgi service.
+May 25 23:44:32 localhost systemd: Unit spawn-fcgi.service entered failed state.
+
+
